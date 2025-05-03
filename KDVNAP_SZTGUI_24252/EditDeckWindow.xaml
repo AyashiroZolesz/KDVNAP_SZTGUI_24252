@@ -1,0 +1,37 @@
+﻿<Window x:Class="KDVNAP_SZTGUI_24252.EditDeckWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KDVNAP_SZTGUI_24252"
+        mc:Ignorable="d"
+        Title="Pakli szerkesztése" Height="425" Width="400" Background="#FFF2D7">
+    <StackPanel Margin="10">
+        <Border BorderThickness="0, 0, 0, 2px" BorderBrush="#D8AE7E" Margin="10">
+            <Label x:Name="DeckNameText" Margin="0, 0, 0, 10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Segoe UI" FontSize="18" FontWeight="DemiBold" Background="#D8AE7E" Foreground="#FFF2D7"/>
+        </Border>
+
+        <Border BorderBrush="#D8AE7E" BorderThickness="0, 0, 0, 2px" Margin="10, 0, 10, 0">
+            <StackPanel>
+                <Label Foreground="#D8AE7E" FontWeight="DemiBold" FontSize="14">Kérdés</Label>
+                <TextBox x:Name="QuestionBox" Background="#FFE0B5" BorderBrush="#FFF2D7" Margin="5, 0, 5, 0" Foreground="#D8AE7E" FontSize="12" FontWeight="DemiBold"/>
+                <Label Foreground="#D8AE7E" FontWeight="DemiBold" FontSize="14">Válasz</Label>
+                <TextBox x:Name="AnswerBox" Background="#FFE0B5" BorderBrush="#FFF2D7" Margin="5, 0, 5, 15" Foreground="#D8AE7E" FontSize="12" FontWeight="DemiBold"/>
+                <Button Content="Kártya mentése" Click="AddOrUpdateCard_Click" Height="30" Background="#F8C794" BorderBrush="#F8C794" Margin="5, 0, 5, 10" Foreground="#FFF2D7" FontSize="14" FontWeight="DemiBold"/>
+            </StackPanel>
+        </Border>
+
+
+
+        <ListBox x:Name="FlashcardList" Height="100" Background="#FFF2D7" BorderBrush="#FFE0B5" BorderThickness="2px" Margin="15, 10, 15, 10" Foreground="#D8AE7E" FontSize="12" FontWeight="DemiBold"
+              DisplayMemberPath="Question" SelectionChanged="FlashcardList_SelectionChanged"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Content="Törlés" Click="DeleteCard_Click" Grid.Column="0" Background="#F8C794" BorderBrush="#F8C794" Margin="5, 0, 5, 10" Foreground="#FFF2D7" FontSize="14" FontWeight="DemiBold"/>
+            <Button Content="Pakli mentése" Click="SaveDeck_Click" Grid.Column="1" Background="#F8C794" BorderBrush="#F8C794" Margin="5, 0, 5, 10" Foreground="#FFF2D7" FontSize="14" FontWeight="DemiBold"/>
+        </Grid>
+    </StackPanel>
+</Window>

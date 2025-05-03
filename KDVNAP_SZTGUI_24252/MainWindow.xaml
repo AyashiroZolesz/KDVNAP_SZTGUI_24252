@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KDVNAP_SZTGUI_24252"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Új pakli" Height="485" Width="400" Background="#D1F8EF">
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="30*"/>
