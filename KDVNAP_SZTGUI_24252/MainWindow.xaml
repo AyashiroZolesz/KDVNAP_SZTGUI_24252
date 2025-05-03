@@ -6,35 +6,44 @@
         xmlns:local="clr-namespace:KDVNAP_SZTGUI_24252"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="10">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10"/>
-            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="80*"/>
         </Grid.ColumnDefinitions>
-
-        <StackPanel Grid.Column="0" Grid.Row="0">
-            <Button Height="30" Margin="0, 5, 0, 5" Content="Start"/>
-            <Button Height="30" Margin="0, 5, 0, 5" Content="Statistics"/>
-            <Button Height="30" Margin="0, 5, 0, 5" Content="New Set"/>
-            <Button Height="30" Margin="0, 5, 0, 5" Content="Edit Current Set"/>
-            <ComboBox x:Name="comboBox" Margin="10">
-
-            </ComboBox>
-
-        </StackPanel>
-
-        <Grid Grid.Column="1">
-            <TextBox BorderBrush="Black" BorderThickness="2pt" Margin="50, 100" FontSize="32" FontWeight="Bold" TextAlignment="Center" VerticalContentAlignment="Center"/>
-        </Grid>
-
-        <Button Grid.Column="0" Grid.Row="1" Margin="20, 8, 20, 8" Content="Close"></Button>
-        <ProgressBar Grid.Column="1" Grid.Row="1" Margin="20, 10, 20, 10"/>
-
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="90*"></RowDefinition>
+            <RowDefinition Height="16*"></RowDefinition>
+            <RowDefinition Height="14*"></RowDefinition>
         </Grid.RowDefinitions>
 
+        <!-- Bal oldali lista -->
+        <Border BorderBrush="#006769" BorderThickness="0, 0, 2px, 0">
+            <StackPanel Grid.Column="0" Grid.Row="0" Margin="0, 0, 0, 10">
+                <ListBox x:Name="DeckList" SelectionChanged="DeckList_SelectionChanged" Height="100" Margin="5, 5, 5, 0" Background="#9DDE8B" BorderBrush="#006769" BorderThickness="1px" Foreground="#006769" FontFamily="Segoe UI" FontSize="12" FontWeight="DemiBold"/>
+                <Button Content="Új pakli" Click="NewDeck_Click" Margin="5,10,5,0" Background="#40A578" Foreground="#E6FF94" FontFamily="Segoe UI" FontSize="14" FontWeight="DemiBold" BorderBrush="#9DDE8B"/>
 
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Center">
+                </StackPanel>
+                <Button Content="Szerkesztés" Click="EditDeck_Click" Margin="5,5,5,0" Background="#40A578" Foreground="#E6FF94" FontFamily="Segoe UI" FontSize="14" FontWeight="DemiBold" BorderBrush="#9DDE8B"/>
+                <Button Content="Törlés" Click="DeleteDeck_Click" Margin="5,5,5,0" Background="#40A578" Foreground="#E6FF94" FontFamily="Segoe UI" FontSize="14" FontWeight="DemiBold" BorderBrush="#9DDE8B"/>
+            </StackPanel>
+        </Border>
+        <!-- Jobb oldali kártyanézet -->
+        <Label Grid.Column="1" Grid.Row="0" Content="{Binding CurrentFlashcardText}" VerticalAlignment="Stretch" Margin="5" FontFamily="Segoe UI" FontSize="24" FontWeight="DemiBold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#006769"/>
+
+        <Border Grid.Row="1" Grid.ColumnSpan="2" BorderBrush="#006769" BorderThickness="0, 2px, 0, 0">
+            <Button Content="Megfordítás" Click="ToggleCard_Click" Margin="0, 5, 0, 0" Background="#40A578" Foreground="#E6FF94" FontFamily="Segoe UI" FontSize="14" FontWeight="DemiBold" BorderBrush="#9DDE8B"/>
+        </Border>
+
+        <Grid Margin="0, 10, 0, 0" Grid.Row="2" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button Content="Előző" Click="PrevCard_Click" Margin="0, 0, 5, 0" Grid.Column="0" Background="#40A578" Foreground="#E6FF94" FontFamily="Segoe UI" FontSize="14" FontWeight="DemiBold" BorderBrush="#9DDE8B"/>
+            <Button Content="Következő" Click="NextCard_Click" Margin="5, 0, 0, 0" Grid.Column="1" Background="#40A578" Foreground="#E6FF94" FontFamily="Segoe UI" FontSize="14" FontWeight="DemiBold" BorderBrush="#9DDE8B"/>
+        </Grid>
     </Grid>
 </Window>
