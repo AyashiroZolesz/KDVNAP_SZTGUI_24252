@@ -9,5 +9,6 @@ namespace KDVNAP_SZTGUI_24252;
 /// </summary>
 public partial class App : Application
 {
+
 }
 
