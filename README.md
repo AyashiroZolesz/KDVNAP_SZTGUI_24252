@@ -1,5 +1,18 @@
-FootballSim
+# FlashcardApp
 
-Egy rétegezett WPF alkalmazás, amely egy futballklub játékosainak edzését és meccskeretbe válogatását kezeli egyelőre. Később tervben van meccsszimuláció, akár ligarendszer.
+Ez egy egyszerű tanulókártya alkalmazás, amely WPF-ben és C#-ban készült.  
+Segítségével paklikat és kártyákat hozhatsz létre, szerkeszthetsz és tanulhatsz velük.
 
-Ez a projekt jelenleg fejlesztés alatt áll. A fő cél, hogy egy bővíthető, értelmes futballmenedzsment rendszer jöjjön létre.
+## 🔹 Fő funkciók:
+- Kártyapaklik létrehozása, szerkesztése
+- Kártyák hozzáadása, módosítása
+- Adatok mentése JSON fájlba
+
+## 🚧 Állapot
+
+A projekt jelenleg fejlesztés alatt áll.  
+Tervben van új funkciók hozzáadása, például shuffle funkció, statisztikák és exportálás.
+
+## 👤 Készítette
+
+Ács Zoltán ("Zolesz")
