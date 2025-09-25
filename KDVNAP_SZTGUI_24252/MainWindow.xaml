@@ -12,9 +12,9 @@
             <ColumnDefinition Width="80*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="90*"></RowDefinition>
-            <RowDefinition Height="16*"></RowDefinition>
-            <RowDefinition Height="14*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
 
         <!-- Bal oldali lista -->
@@ -30,7 +30,15 @@
             </StackPanel>
         </Border>
         <!-- Jobb oldali kártyanézet -->
-        <Label Grid.Column="1" Grid.Row="0" Content="{Binding CurrentFlashcardText}" VerticalAlignment="Stretch" Margin="5" FontFamily="Segoe UI" FontSize="24" FontWeight="DemiBold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#006769"/>
+		<Border Grid.Column="1" Grid.Row="0" Margin="5" Padding="16" CornerRadius="8" Background="Transparent" BorderThickness="0" ClipToBounds="True">
+			<FlowDocumentScrollViewer Background="Transparent" BorderThickness="0" VerticalScrollBarVisibility="Auto" IsToolBarVisible="False">
+				<FlowDocument IsHyphenationEnabled="True" Language="hu-HU" Background="Transparent" TextAlignment="Center">
+					<Paragraph FontFamily="Segoe UI" FontSize="24" FontWeight="DemiBold" Foreground="#006769">
+						<Run Text="{Binding DataContext.CurrentFlashcardText,RelativeSource={RelativeSource AncestorType=FlowDocumentScrollViewer},Mode=OneWay}"/>
+					</Paragraph>
+				</FlowDocument>
+			</FlowDocumentScrollViewer>
+		</Border>
 
         <Border Grid.Row="1" Grid.ColumnSpan="2" BorderBrush="#006769" BorderThickness="0, 2px, 0, 0">
             <Button Content="Megfordítás" Click="ToggleCard_Click" Margin="0, 5, 0, 0" Background="#40A578" Foreground="#E6FF94" FontFamily="Segoe UI" FontSize="14" FontWeight="DemiBold" BorderBrush="#9DDE8B"/>
